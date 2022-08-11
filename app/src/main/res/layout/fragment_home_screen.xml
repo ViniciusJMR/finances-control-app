@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.MainScreenFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        app:layout_constraintEnd_toEndOf="@id/gl_main_frag"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_user_icon"
+        app:layout_constraintBottom_toBottomOf="@id/til_remainder"
+        tools:text="Vinicius Rodrigues" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_monthly_profit_label"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_double_margin"
+        android:layout_marginStart="@dimen/default_margin"
+        android:text="@string/txt_monthly_profit_label"
+        app:layout_constraintStart_toStartOf="@+id/gl_main_frag"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_monthly_profit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:prefixText="@string/monthly_profit_prefix"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl_main_frag"
+        app:layout_constraintTop_toBottomOf="@+id/tv_monthly_profit_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:text="0"
+            android:textAlignment="textEnd"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_remainder_label"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="@dimen/default_margin"
+        android:text="@string/txt_remainder_label"
+        app:layout_constraintStart_toStartOf="@+id/gl_main_frag"
+        app:layout_constraintTop_toBottomOf="@+id/til_monthly_profit" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_remainder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        app:prefixText="@string/monthly_profit_prefix"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gl_main_frag"
+        app:layout_constraintTop_toBottomOf="@+id/tv_remainder_label">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:clickable="false"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:text="0"
+            android:textAlignment="textEnd"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/iv_user_icon"
+        android:layout_width="@dimen/default_img_size"
+        android:layout_height="@dimen/default_img_size"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintEnd_toEndOf="@id/gl_main_frag"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/cd_user_image_icon" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_non_card_income_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginTop="@dimen/default_quadruple_margin"
+        app:layout_constraintTop_toBottomOf="@id/tv_username"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/txt_non_card_income"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_non_card_income"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:layout_constraintStart_toEndOf="@+id/tv_non_card_income_label"
+        app:layout_constraintTop_toTopOf="@id/tv_non_card_income_label"
+        app:layout_constraintBottom_toBottomOf="@id/tv_non_card_income_label"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:textAlignment="textEnd"
+            android:text="0"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_quadruple_margin"
+        android:layout_marginStart="@dimen/default_margin"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        app:layout_constraintTop_toBottomOf="@id/til_non_card_income"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/txt_cards_label"
+        />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_cards_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_margin"
+        android:layout_marginRight="@dimen/default_margin"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        app:layout_constraintStart_toEndOf="@+id/tv_card"
+        app:layout_constraintTop_toTopOf="@id/tv_card"
+        app:layout_constraintBottom_toBottomOf="@id/tv_card"
+        app:layout_constraintEnd_toEndOf="@id/gl_main_frag"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:textAlignment="textEnd"
+            android:text="0"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_margin"
+        style="?attr/borderlessButtonStyle"
+        app:layout_constraintTop_toTopOf="@id/til_cards_total"
+        app:layout_constraintBottom_toBottomOf="@id/til_cards_total"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/txt_add"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/til_cards_total"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_main_frag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

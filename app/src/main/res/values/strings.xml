@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Finance App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="txt_monthly_profit_label">Monthly Profit:</string>
+    <string name="monthly_profit_prefix">$</string>
+    <string name="txt_remainder_label">Remainder:</string>
+
+    <!--  Content Description -->
+    <string name="cd_user_image_icon">User Image Icon</string>
+    <string name="txt_non_card_income">Non card related income:</string>
+    <string name="txt_cards_label">Cards:</string>
+    <string name="txt_add">Add</string>
 </resources>
