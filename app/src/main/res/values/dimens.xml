@@ -7,4 +7,5 @@
 
     <dimen name="default_img_size">150dp</dimen>
     <dimen name="default_line_stroke">3dp</dimen>
+    <dimen name="default_card_size">180dp</dimen>
 </resources>
