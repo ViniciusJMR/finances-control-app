@@ -89,6 +89,7 @@
         app:layout_constraintEnd_toEndOf="@id/gl_main_frag"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:src="@tools:sample/avatars"
         android:contentDescription="@string/cd_user_image_icon" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -97,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/default_margin"
         android:layout_marginLeft="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_quadruple_margin"
+        android:layout_marginTop="@dimen/default_double_big_margin"
         app:layout_constraintTop_toBottomOf="@id/tv_username"
         app:layout_constraintStart_toStartOf="parent"
         android:text="@string/txt_non_card_income"
@@ -128,7 +129,7 @@
         android:id="@+id/tv_card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_quadruple_margin"
+        android:layout_marginTop="@dimen/default_big_margin"
         android:layout_marginStart="@dimen/default_margin"
         style="@style/TextAppearance.Material3.BodyLarge"
         app:layout_constraintTop_toBottomOf="@id/til_non_card_income"
@@ -171,12 +172,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:scrollbars="horizontal"
+        android:layout_marginTop="@dimen/default_half_margin"
         app:layout_constraintTop_toBottomOf="@id/til_cards_total"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_card"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_main_frag"
         android:layout_width="wrap_content"
