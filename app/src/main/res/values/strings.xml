@@ -17,4 +17,5 @@
     <string name="txt_tags">Tags</string>
     <string name="txt_general_income">General Income</string>
     <string name="txt_installments_label">Installments:</string>
+    <string name="txt_fees_label">Fees:</string>
 </resources>

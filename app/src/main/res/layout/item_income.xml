@@ -62,7 +62,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
             android:text="@string/txt_installments_label"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_income_description" />
 
@@ -84,6 +83,26 @@
             app:layout_constraintTop_toTopOf="@id/tv_income_installments_label"
             tools:text="10/08" />
 
+        <TextView
+            android:id="@+id/tv_income_fees_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:text="@string/txt_fees_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_income_installments_label"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_income_installments_label"
+            />
+
+        <TextView
+            android:id="@+id/tv_income_fees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            app:layout_constraintStart_toEndOf="@id/tv_income_fees_label"
+            app:layout_constraintTop_toTopOf="@id/tv_income_fees_label"
+            tools:text="0.34%" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

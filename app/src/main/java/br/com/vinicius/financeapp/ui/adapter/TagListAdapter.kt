@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import br.com.vinicius.financeapp.R
 import br.com.vinicius.financeapp.data.model.Tag
 import br.com.vinicius.financeapp.databinding.ItemTagBinding
 
