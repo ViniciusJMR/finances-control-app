@@ -16,4 +16,5 @@
     <string name="txt_add">Add</string>
     <string name="txt_tags">Tags</string>
     <string name="txt_general_income">General Income</string>
+    <string name="txt_installments_label">Installments:</string>
 </resources>

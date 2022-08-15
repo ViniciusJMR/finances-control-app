@@ -35,7 +35,9 @@
         android:layout_marginTop="@dimen/default_half_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_add_tag" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_add_tag"
+        tools:listitem="@layout/item_tag"
+        tools:itemCount="1"/>
 
     <TextView
         android:id="@+id/tv_general_income_title"
@@ -66,6 +68,8 @@
         android:layout_marginTop="@dimen/default_half_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/item_income"
         app:layout_constraintTop_toBottomOf="@+id/bt_add_income"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

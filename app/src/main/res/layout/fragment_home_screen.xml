@@ -173,7 +173,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_card"/>
+        tools:listitem="@layout/item_card"
+        tools:itemCount="1"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_main_frag"

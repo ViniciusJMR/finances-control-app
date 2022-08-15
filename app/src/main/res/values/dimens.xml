@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Margins -->
     <dimen name="default_margin">16dp</dimen>
     <dimen name="default_half_margin">8dp</dimen>
     <dimen name="default_double_margin">32dp</dimen>
     <dimen name="default_big_margin">64dp</dimen>
     <dimen name="default_double_big_margin">128dp</dimen>
 
+    <!-- Radius -->
+    <dimen name="default_radius">16dp</dimen>
+    <dimen name="default_double_radius">32dp</dimen>
+
+    <!-- Images -->
     <dimen name="default_img_size">150dp</dimen>
-    <dimen name="default_line_stroke">3dp</dimen>
+
+    <!-- Cards -->
     <dimen name="default_card_size">180dp</dimen>
 </resources>
