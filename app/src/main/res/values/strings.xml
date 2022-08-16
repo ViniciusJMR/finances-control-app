@@ -18,4 +18,6 @@
     <string name="txt_general_income">General Income</string>
     <string name="txt_installments_label">Installments:</string>
     <string name="txt_fees_label">Fees:</string>
+    <string name="txt_home">Home</string>
+    <string name="general_income">General</string>
 </resources>
