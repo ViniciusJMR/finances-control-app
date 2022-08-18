@@ -1,4 +1,4 @@
-package br.com.vinicius.financeapp.ui
+package br.com.vinicius.financeapp.ui.fragment
 
 
 import android.os.Bundle

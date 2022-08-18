@@ -20,4 +20,12 @@
     <string name="txt_fees_label">Fees:</string>
     <string name="txt_home">Home</string>
     <string name="general_income">General</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_card_name">Card\'s name</string>
+    <string name="txt_card_final_number">Final Number</string>
+    <string name="txt_closure_date">Closure Date</string>
+    <string name="txt_due_date">Due Date</string>
+    <string name="txt_confirm">Confirm</string>
+    <string name="txt_save_card">Save Card</string>
 </resources>
