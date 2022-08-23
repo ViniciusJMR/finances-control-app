@@ -1,21 +1,24 @@
 package br.com.vinicius.financeapp.ui.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import br.com.vinicius.financeapp.R
-import br.com.vinicius.financeapp.data.model.Card
 import br.com.vinicius.financeapp.databinding.FragmentHomeScreenBinding
+import br.com.vinicius.financeapp.domain.State
+import br.com.vinicius.financeapp.presentation.HomeViewModel
 import br.com.vinicius.financeapp.ui.adapter.CardListAdapter
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeScreenFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeScreenBinding
+    private val homeViewModel by viewModel<HomeViewModel>()
     private val adapter by lazy { CardListAdapter() }
 
     override fun onCreateView(
@@ -24,29 +27,37 @@ class HomeScreenFragment : Fragment() {
     ): View? {
         binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
 
-        val x = listOf(
-            Card(1, "Nubank", "2431", "10/14", "13/15"),
-            Card(2, "Santader", "9583", "11/15", "58/15"),
-            Card(1, "Nubank", "2431", "13/10", "10/20")
-        )
-
-        binding.rvCards.adapter = adapter
-        binding.rvCards.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-
-        adapter.submitList(x)
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupListeners()
+        homeViewModel.getCardList()
+        setupCardRecyclerView()
     }
 
     private fun setupListeners() {
         binding.btAddCard.setOnClickListener{
             findNavController().navigate(R.id.action_homeScreenFragment_to_cardCreationFragment)
         }
+    }
+
+    private fun setupCardRecyclerView(){
+        binding.rvCards.adapter = adapter
+        binding.rvCards.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+        homeViewModel.cards.observe(viewLifecycleOwner) {
+            when(it) {
+                is State.Error ->
+                    Toast.makeText(context, it.error.message, Toast.LENGTH_SHORT).show()
+                is State.Success ->
+                    adapter.submitList(it.response)
+                else ->
+                    Toast.makeText(context, R.string.err_string, Toast.LENGTH_SHORT).show()
+            }
+        }
+
     }
 }
