@@ -1,5 +1,6 @@
 package br.com.vinicius.financeapp.presentation.di
 
+import br.com.vinicius.financeapp.presentation.CardCreationViewModel
 import br.com.vinicius.financeapp.presentation.HomeViewModel
 import get
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -16,6 +17,9 @@ object PresentationModule {
     private fun viewModelModule() = module {
         viewModel {
             HomeViewModel(get())
+        }
+        viewModel {
+            CardCreationViewModel(get())
         }
     }
 

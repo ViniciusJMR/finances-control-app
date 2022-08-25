@@ -2,6 +2,7 @@ package br.com.vinicius.financeapp.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.time.LocalDate
 
 //TODO Alterar as datas para o tipo correto
 @Entity

@@ -5,4 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface Repository<T> {
     suspend fun getAll(): Flow<LiveData<List<T>>>
+
+    suspend fun insert(item: T): Flow<Unit>
 }

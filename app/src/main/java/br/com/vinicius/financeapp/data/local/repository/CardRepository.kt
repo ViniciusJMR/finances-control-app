@@ -11,4 +11,9 @@ class CardRepository(
         val cards= localDb.cardDao().getAllCards()
         emit(cards)
     }
+
+    override suspend fun insert(item: Card) = flow {
+        localDb.cardDao().insert(item)
+        emit(Unit)
+    }
 }

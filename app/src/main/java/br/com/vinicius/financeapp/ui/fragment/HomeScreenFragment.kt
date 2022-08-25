@@ -1,6 +1,7 @@
 package br.com.vinicius.financeapp.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,8 +53,12 @@ class HomeScreenFragment : Fragment() {
             when(it) {
                 is State.Error ->
                     Toast.makeText(context, it.error.message, Toast.LENGTH_SHORT).show()
-                is State.Success ->
+                is State.Success -> {
                     adapter.submitList(it.response)
+                    it.response?.forEach { card ->
+                        Log.d("CARD", card.toString())
+                    }
+                }
                 else ->
                     Toast.makeText(context, R.string.err_string, Toast.LENGTH_SHORT).show()
             }

@@ -4,36 +4,32 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.vinicius.financeapp.data.model.Card
+import br.com.vinicius.financeapp.data.model.dto.CardDto
 import br.com.vinicius.financeapp.domain.State
 import br.com.vinicius.financeapp.domain.card.InsertUserCardUseCase
-import br.com.vinicius.financeapp.domain.card.ListUserCardsUseCase
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
-class HomeViewModel(
-    private val listUserCardsUseCase: ListUserCardsUseCase,
-): ViewModel(){
-    private val _cards = MutableLiveData<State<List<Card>>>()
-    val cards: LiveData<State<List<Card>>> = _cards
+class CardCreationViewModel(
+    private val insertUserCardUseCase: InsertUserCardUseCase
+): ViewModel() {
 
-    fun getCardList() {
+    private val _card = MutableLiveData<State<Unit>>()
+    val card: LiveData<State<Unit>> = _card
+
+    fun insertCard(card: CardDto){
         viewModelScope.launch {
-            listUserCardsUseCase()
+            insertUserCardUseCase(card)
                 .onStart {
-                    _cards.postValue(State.Loading)
+                    _card.postValue(State.Loading)
                 }
                 .catch {
-                    _cards.postValue(State.Error(it))
+                    _card.postValue(State.Error(it))
                 }
                 .collect{
-                    _cards.postValue(State.Success(it.value))
+                    _card.postValue(State.Success(it))
                 }
         }
-
     }
-
-
 }

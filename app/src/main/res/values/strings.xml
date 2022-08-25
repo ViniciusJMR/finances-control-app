@@ -28,5 +28,8 @@
     <string name="txt_save_card">Save Card</string>
 
     <!-- Error -->
-    <string name="err_string">An Error has occurred: </string>
+    <string name="err_string">An Unexpected error has occurred </string>
+    <string name="err_date_parse">Error parsing date</string>
+    <string name="txt_card_created">Card created with success</string>
+
 </resources>
