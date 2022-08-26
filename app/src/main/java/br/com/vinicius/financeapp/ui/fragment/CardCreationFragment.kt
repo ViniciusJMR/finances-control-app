@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import br.com.vinicius.financeapp.R
 import br.com.vinicius.financeapp.data.model.dto.CardDto
 import br.com.vinicius.financeapp.databinding.FragmentCardCreationBinding

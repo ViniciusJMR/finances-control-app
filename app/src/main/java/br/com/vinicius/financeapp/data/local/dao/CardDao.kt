@@ -12,9 +12,9 @@ import kotlinx.coroutines.flow.Flow
 interface CardDao {
 
     @Query("SELECT * FROM Card")
-    fun getAllCards(): LiveData<List<Card>>
+    suspend fun getAllCards(): List<Card>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insert(newCard: Card)
 
 }

@@ -1,9 +1,8 @@
 package br.com.vinicius.financeapp.presentation
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import android.app.Application
+import android.util.Log
+import androidx.lifecycle.*
 import br.com.vinicius.financeapp.data.model.Card
 import br.com.vinicius.financeapp.domain.State
 import br.com.vinicius.financeapp.domain.card.InsertUserCardUseCase
@@ -14,8 +13,9 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
+    app: Application,
     private val listUserCardsUseCase: ListUserCardsUseCase,
-): ViewModel(){
+): AndroidViewModel(app){
     private val _cards = MutableLiveData<State<List<Card>>>()
     val cards: LiveData<State<List<Card>>> = _cards
 
@@ -29,7 +29,7 @@ class HomeViewModel(
                     _cards.postValue(State.Error(it))
                 }
                 .collect{
-                    _cards.postValue(State.Success(it.value))
+                    _cards.postValue(State.Success(it))
                 }
         }
 

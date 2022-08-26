@@ -20,5 +20,8 @@ class MainActivity : AppCompatActivity() {
         binding.bnvMenu.setupWithNavController(navCtrl)
     }
 
+    override fun onBackPressed() {
+        findNavController(R.id.fragmentContainerView).popBackStack()
+    }
 
 }

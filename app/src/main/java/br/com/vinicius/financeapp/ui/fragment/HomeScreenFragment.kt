@@ -55,12 +55,8 @@ class HomeScreenFragment : Fragment() {
                     Toast.makeText(context, it.error.message, Toast.LENGTH_SHORT).show()
                 is State.Success -> {
                     adapter.submitList(it.response)
-                    it.response?.forEach { card ->
-                        Log.d("CARD", card.toString())
-                    }
                 }
-                else ->
-                    Toast.makeText(context, R.string.err_string, Toast.LENGTH_SHORT).show()
+                is State.Loading ->{}
             }
         }
 

@@ -16,10 +16,10 @@ object PresentationModule {
 
     private fun viewModelModule() = module {
         viewModel {
-            HomeViewModel(get())
+            HomeViewModel(get(), get())
         }
         viewModel {
-            CardCreationViewModel(get())
+            CardCreationViewModel(get(), get())
         }
     }
 
